@@ -4,12 +4,13 @@ services:
   db:
     build: .
     container_name: conexblog-db
-    restart: always
+    restart: 'always'
     tty: true
     ports:
       - "5432:5432"
     volumes:
-      - .docker/dbdata:/var/lib/postgresql/data
+      - C:\dev\conex-blog\.docker\dbdata:/var/lib/postgresql/data
     environment:
-      - POSTGRES_PASSWORD=docker
+      - POSTGRES_PASSWORD=pass1234
+      - POSTGRES_USER=postgres
       - POSTGRES_DB=conexblog

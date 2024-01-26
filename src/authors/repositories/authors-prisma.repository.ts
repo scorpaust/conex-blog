@@ -31,9 +31,9 @@ export class AuthorsPrismaRepository implements IAuthorsRepository {
   }
   async get(id: string): Promise<Author> {
 
-    const author = this.prisma.author.findUnique({
+    const author = await this.prisma.author.findUnique({
       where: {
-        id: id
+        id
       }
     })
 

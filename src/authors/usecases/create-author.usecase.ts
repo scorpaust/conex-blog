@@ -1,24 +1,19 @@
 import { AuthorsPrismaRepository } from '../repositories/authors-prisma.repository';
 import { BadRequestError } from '@/shared/errors/bad-request-error';
 import { ConflictError } from '@/shared/errors/conflict-error';
+import { AuthorOutput } from '../types/author-output';
 export namespace CreateAuthorUsecase {
+
   type Input = {
     name: string
     email: string
-  }
-
-  type Output = {
-    id: string
-    name: string
-    email: string
-    createdAt: Date
   }
 
   export class UseCase {
 
     constructor(private authorsRepository: AuthorsPrismaRepository) {}
 
-    async execute(input: Input): Promise<Output> {
+    async execute(input: Input): Promise<AuthorOutput> {
       const { name, email } = input;
 
       if (!email || !name) {

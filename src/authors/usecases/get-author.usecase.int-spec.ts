@@ -4,8 +4,6 @@ import { GetAuthorUsecase } from './get-author.usecase';
 import { PrismaClient } from '@prisma/client';
 import { execSync } from 'node:child_process';
 import { AuthorDataBuilder } from '../helpers/author-data-builder';
-import { ConflictError } from '../../shared/errors/conflict-error';
-import { BadRequestError } from '../../shared/errors/bad-request-error';
 import { NotFoundError } from '@/shared/errors/not-found-error';
 
 
